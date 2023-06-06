@@ -1,0 +1,273 @@
+﻿body {
+    background-color: #262a2f;
+    max-width: 1200px;
+    min-width: 600px;
+    margin: auto;
+/*    border: 1px solid;*/
+    display: flex;
+    font-family: Arial;
+/*    box-shadow: 0 0 20px rgba(0,0,0,0.9);*/
+}
+.all {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    height: 95%;
+}
+.left_side {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 27.5%;
+    height: 50vh;
+    min-height: 200px;
+    position: sticky;
+    top:1%;
+    /*    background-color: cadetblue;*/
+}
+.middle_side {
+    position: relative;
+    margin-right: 50px;
+    display: flex;
+    height: 98.9vh;
+    margin-top: 10px;
+    flex-direction: column;
+    flex-basis: 45%;
+    overflow-y: auto;
+    /*    background-color: cornsilk;*/
+}
+.right_side {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 27.5%;
+    height: 70vh;
+    min-height: 200px;
+    position: sticky;
+    top: 1%;
+    overflow-y: auto;
+    /*    background-color: darkkhaki;*/
+}
+
+.top {
+    position: relative;
+    font-size: 30px;
+    font-weight: 600;
+/*    background-color: darksalmon;*/
+    color: whitesmoke;
+    padding-bottom: 15px;
+}
+.left_side .logo {
+    width: 35px;
+    display:block;
+}
+.right_side .people {
+    overflow: hidden;
+    overscroll-behavior: contain;
+    height: 450px;
+    width: 100%;
+}
+.right_side .people:hover {
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+
+#scroll-area::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+/* Track */
+#scroll-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+ /*Handle*/
+#scroll-area::-webkit-scrollbar-thumb {
+    background: rgba(256, 256, 256, 0.5);
+    border-radius: 5px;
+}
+
+ /*Handle on hover*/
+#scroll-area::-webkit-scrollbar-thumb:hover {
+    background: rgba(256, 256, 256, 0.7);
+}
+.right_side .row {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    margin-bottom: 20px;
+    margin-left:5px;
+    height: 80px;
+    width:95%;
+    border-radius: 7px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+}
+.right_side .row:hover{
+    box-shadow:0 0px 20px rgba(0, 0, 0, 0.5);
+}
+.row:nth-of-type(1) {
+    margin-top: 10px;
+}
+.row:nth-of-type(11) {
+    margin-bottom: 10px;
+}
+.right_side .profile-picture{
+    display:flex;
+    flex-basis:20%;
+}
+.right_side .profile-picture img {
+    width:45px;
+    height:45px;
+    object-fit:cover;
+    object-position:center;
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: box-shadow 0.3s;
+    transition: width 0.3s;
+    cursor:pointer;
+}
+.right_side .profile-picture img:hover{
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.right_side .profile-picture img:active{
+    width:60px;
+    height:60PX;
+    object-fit:cover;
+    object-position:right;
+    border-radius:35px;
+}
+.right_side .stats{
+    display:flex;
+    flex-basis:45%;
+    flex-direction:column;
+}
+.right_side .name {
+    font-weight: bold;
+    align-items:flex-start;
+    color: whitesmoke;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline-block;
+    transition: font-size 0.5s;
+}
+.right_side .name:active{
+    font-size:23px;
+}
+.right_side .Location {
+    font-size: 11px;
+    color: gray;
+    padding-left:5px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.right_side .flwbut {
+    font-size: 10px;
+    background-color: #1c95e0;
+    color: whitesmoke;
+    border: none;
+    margin-left:5px;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 7px 12px 7px 12px;
+    margin-left:5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+.right_side .flwbut:hover{
+    opacity:0.75;
+}
+.right_side .flwbut:active{
+    opacity:0.5;
+}
+.right_side #message {
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 7px;
+    color: whitesmoke;
+}
+
+.middle_side .feed {
+    position: relative;
+    display: flex;
+    padding: 15px;
+    margin-left:10px;
+    margin-right:10PX;
+    flex-direction: column;
+    border-left: solid 0.8px;
+    border-right: solid 0.8px;
+    border-top: solid 0.8px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 00px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    height: 100%;
+}
+.middle_side .post {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.9);
+    background-color: #131418;
+}
+.middle_side .tweeter {
+    position: relative;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+.middle_side .post .tweeter img {
+    width: 40px;
+    border-radius: 50px;
+    vertical-align: bottom;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+.middle_side .post .tweeter img:hover{
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+.middle_side .post .tweeter img:active{
+    box-shadow: 0 0 5px rgba(0,0,0,0.9);
+}
+.middle_side .post .tweeter textarea {
+    font-size: 17px;
+    border: none;
+    resize:vertical;
+    width:60%;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #131418;
+    color:rgba(256, 256, 256, 0.7);
+}
+.middle_side .post .tweeter textarea::placeholder{
+    color:rgba(256, 256, 256, 0.7);
+}
+
+.middle_side .post .tweeter textarea:focus {
+    outline: none;
+}
+.middle_side .post .tweeter #button {
+    position:absolute;
+    left:85%;
+    font-size: 13px;
+    border-radius: 50px;
+    padding:6px 12px 6px 12px;
+    font-weight: bold;
+    background-color: rgb(29 155 240);
+    color: whitesmoke;
+    border-style: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+.middle_side .post .tweeter #button:hover{
+    opacity:0.8;
+}
+.middle_side .post .tweeter #button:active{
+    opacity:0.6;
+}
+button[disabled] {
+    animation: none !important;
+    pointer-events: none;
+    opacity: 0.5; /* Optional: You can reduce the opacity to indicate the button is disabled */
+}

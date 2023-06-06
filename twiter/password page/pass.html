@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Password</title>
+    <link href="pass.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!--
+    <link href="../css/text.css" rel="stylesheet" />
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/960_12_col.css" rel="stylesheet"/>
+
+    -->
+</head>
+<body>
+    <div class="pass-box">
+        <img src="../images/twitter.jpg " class="logo" />
+        <h2 id="sit">Enter your password</h2>
+        <div class="username">
+            <p id="placeholder">Username</p>
+            <p id="value-output"></p>
+
+        </div>
+
+
+        <form>
+            <div class="parola">
+            <input type="password" name="password" 
+                   onkeyup="EnableDisable(this)" autocomplete="current-password" required="" id="id_password"/>
+            <label class="floating-label">Password</label>
+            <i class="far fa-eye" id="togglePassword"></i>
+
+            </div>
+            <p><a href="unlucky.html">Forgot your password?</a></p>
+        </form>
+            <button class="buton" id="lb" type="submit" disabled="disabled" onclick="window.location.href = '../Mainpage/mainpage.html'">Log in</button>
+        <p>Don't have an account? <a href="../sign up page/html/join.html">Sign up</a></p>
+    </div>
+      <script type="text/javascript">
+          //const resultsList = document.getElementById('pass-box')
+          //new URLSearchParams(window.location.search).forEach((value,
+          //    name) =>{
+          //    resultsList.append('${name}:value')
+          //    resultsList.append(document.createElement('br'))
+          //    })
+
+          const togglePassword = document.querySelector('#togglePassword');
+          const password = document.querySelector('#id_password');
+
+          togglePassword.addEventListener('click', function (e) {
+              // toggle the type attribute
+              const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+              password.setAttribute('type', type);
+              // toggle the eye slash icon
+              this.classList.toggle('fa-eye-slash');
+          });
+          window.onload = function () {
+              // Get the value from localStorage
+              var value = localStorage.getItem('myValue');
+
+              // Display the value on the page
+              var output = document.getElementById('value-output');
+              output.innerText = value;
+          };
+
+         function EnableDisable(txtPassportNumber) {
+             //Reference the Button.
+             var lb = document.getElementById("lb");
+             const passwordInput = document.getElementById('id_password');
+             const submitButton = document.getElementById('lb');
+
+             //Verify the TextBox value.
+             if (passwordInput.value.length < 8) {
+                 //Enable the TextBox when TextBox has value.
+                 submitButton.disabled = true;
+             } else {
+                 //Disable the TextBox when TextBox is empty.
+                 submitButton.disabled = false;
+             }
+         }
+     </script>
+</body>
+</html>

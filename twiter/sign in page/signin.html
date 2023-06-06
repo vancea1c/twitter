@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Sing in</title>
+    <link href="css/signin.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!--
+    <link href="../css/text.css" rel="stylesheet" />
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/960_12_col.css" rel="stylesheet"/>
+
+    -->
+</head>
+<body>
+    <div class="login-box">
+        <div class="header">
+            <img src="../images/twitter.jpg" class="logo" />
+            <h2 id="sit">Sign in to Twitter</h2>
+        </div>
+        <div class="sibts">
+            <button class="butoane"><img src="../images/google.png" />Sign in with Google</button>
+            <button class="butoane"><img src="../images/apple.png" />Sign in with Apple</button>
+        </div>
+        <hr />
+        <span>or</span>
+
+        <form  action="../password page/pass.html" method="get">
+            <input type="text" id="username" autocomplete="off" autofocus required onkeyup="EnableDisable(this)" />
+            <label class="floating-label">Phone, email, or username</label>
+            <button class="butoane" id="lb" disabled="disabled" onclick="submitValue()">Next</button>
+        </form>
+            <button class="par" onclick="window.location.href = 'unlucky.html'">Forgot password?</button>
+
+        <p>Don't have an account? <a href="../sign up page/html/join.html">Sign up</a></p>
+    </div>
+
+    <script type="text/javascript">
+        //const form = document.getElementById('form');
+        //const username = document.getElementById('username');
+
+        //form.addEventListener('submit', (e) => {
+        //    e.preventDefault();
+        //    chechInputs();
+        //})
+        //function chechInputs() {
+        //    const usernameValue = username.value.trim();
+        function submitValue() {
+            // Get the value entered by the user
+            var input = document.getElementById('username');
+            var value = input.value;
+
+            // Store the value in localStorage
+            localStorage.setItem('myValue', value);
+
+            // Redirect to the second page
+            window.location.href = '../password page/pass.html'; 
+        }
+        function EnableDisable(txtPassportNumber) {
+            //Reference the Button.
+            var lb = document.getElementById("lb");
+
+            //Verify the TextBox value.
+            if (txtPassportNumber.value.trim() != "") {
+                //Enable the TextBox when TextBox has value.
+                lb.disabled = false;
+            } else {
+                //Disable the TextBox when TextBox is empty.
+                lb.disabled = true;
+            }
+        }
+    </script>
+</body>
+</html>

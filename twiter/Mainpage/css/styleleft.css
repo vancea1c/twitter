@@ -1,0 +1,75 @@
+﻿.left_side{
+    padding-left:20px;
+}
+.side_bar{
+    display:flex;
+    top:50px;
+    flex-direction:column;
+}
+.options {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    color: whitesmoke;
+    opacity: 0.7;
+    align-items: center;
+}
+.options h2{
+    margin-left:10px;
+    font-size:20px;
+}
+.options:hover{
+    background-color:#404750;
+    border-radius:30px;
+    padding-left:11px;
+    color:var(--twitter-color);
+    transition:color 300ms ease-out;
+    transition:padding 300ms ease-out;
+    cursor:pointer;
+}
+#home{
+    width:110px;
+}
+#exp {
+    width: 123px;
+}
+#noti {
+    width: 175px;
+}
+#mail{
+    width:145px;
+}
+#list{
+    width:95px;
+}
+#book {
+    width: 160px;
+}
+#pers {
+    width: 115px;
+}
+#more {
+    width: 95px;
+}
+.side_bar .flwbut {
+    font-size: 16px;
+    background-color: #1c95e0;
+    color: whitesmoke;
+    border: none;
+    width:200px;
+    margin-left: 5px;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 7px 12px 7px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.side_bar .flwbut:hover {
+    opacity: 0.75;
+}
+
+.side_bar .flwbut:active {
+    opacity: 0.5;
+}

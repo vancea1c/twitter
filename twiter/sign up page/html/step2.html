@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Bravo</title>
+    <link href="../css/step2.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!--
+    <link href="../css/text.css" rel="stylesheet" />
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/960_12_col.css" rel="stylesheet"/>
+
+    -->
+</head>
+<body>
+    <div class="pass-box">
+        <div class="header">
+            <h3>Step 2 of 2</h3>
+            <h1>You'll need a password</h1>
+            <p>Make sure it's 8 characters or more.</p>
+        </div>
+
+        <form>
+            <div class="parola">
+                <input type="password" name="password"
+                       oninput="checkPasswordLength()" autocomplete="current-password" id="id_password" />
+                <label class="floating-label">Password</label>
+                <i class="far fa-eye" id="togglePassword"></i>
+                <div id="errorContainer" class="error-container">
+                    <span id="mynameis" class="mesaj">
+                        Your password needs to be at least 8 characters. Please enter a longer one
+                    </span>
+                </div>
+
+            </div>
+        </form>
+            <button class="buton" id="lb" type="submit" onclick="window.location.href = '../../Mainpage/mainpage.html'" disabled="disabled">Next</button>
+    </div>
+
+
+    <script type="text/javascript">
+        //const resultsList = document.getElementById('pass-box')
+        //new URLSearchParams(window.location.search).forEach((value,
+        //    name) =>{
+        //    resultsList.append('${name}:value')
+        //    resultsList.append(document.createElement('br'))
+        //    })
+
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#id_password');
+
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash');
+        });
+
+
+        function checkPasswordLength() {
+            const passwordInput = document.getElementById('id_password');
+            const submitButton = document.getElementById('lb');
+            const errorContainer = document.getElementById('errorContainer');
+
+                if (passwordInput.value.length < 8) {
+                    passwordInput.classList.add('error');
+                    submitButton.disabled = true;
+                    errorContainer.style.display = 'block';
+                } else {
+                    passwordInput.classList.remove('error');
+                    submitButton.disabled = false;
+                    errorContainer.style.display = 'none';
+                }
+            
+        }
+
+    </script>
+</body>
+</html>

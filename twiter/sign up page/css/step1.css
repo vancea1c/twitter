@@ -1,0 +1,265 @@
+﻿body {
+    background-color: #262a2f;
+}
+.signup-box{
+    background-color: #000000;
+    color: white;
+    padding: 10px 80px;
+    width: 430px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family:Arial;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 10px;
+}
+.header{
+    text-align:left;
+}
+.header h3{
+    margin-top:5px;
+    margin-bottom:30px;
+}
+.signup-box input {
+    width: 98%;
+    height: 20px;
+    background: transparent;
+    border: 1px solid rgb(51, 54, 57);
+    outline: 0;
+    padding: 28px 8px 8px;
+    border-radius: 4px;
+    margin-top: 10px;
+    color: white;
+    transition-property: border-color;
+    transition-duration: 0.5s;
+}
+
+.signup-box input:focus {
+    border-color: #1DA1F2;
+    outline:none;
+}
+
+.desigur{
+    position:static;
+    text-align:left;
+    padding-bottom:20px;
+    display:none;
+}
+.mesaj {
+    position: absolute;
+    color: #F4212E;
+    font-size: 13px;
+    opacity: 0.8;
+    left:2%;
+    padding-top:2px;
+}
+.signup-box input {
+    font-size: 17px;
+    color: #b7b5b3;
+}
+.spatius{
+    position:relative;
+    margin-bottom:20px;
+}
+.floating-label{
+    position: absolute;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    font-size: 18px;
+    color: #cccccc;
+    font-family: Arial;
+    opacity: 0.5;
+    left: 10px;
+    top: 29px;
+}
+input:focus ~ .floating-label{
+    top: 18px;
+    left: 10px;
+    font-size: 13px;
+    color: #1DA1F2;
+    opacity: 0.8;
+}
+
+input:not(:focus):valid ~ .floating-label {
+    top: 18px;
+    left: 10px;
+    font-size: 13px;
+    opacity: 0.5;
+}
+#maxLengthDisplay {
+    position: absolute;
+    font-family: Calibri;
+    color: #808080;
+    font-size: 14px;
+    top: 20%;
+    left:92%;
+    visibility:hidden;
+}
+input:focus ~ #maxLengthDisplay {
+    visibility:visible;
+}
+input:not(:focus):valid ~ #maxLengthDisplay{
+    visibility:hidden;
+}
+input.error-border ~ #maxLengthDisplay {
+    visibility: visible;
+}
+input.error-border{
+    border: 1px solid red;
+
+}
+input.error-border:focus{
+    border: 2px solid red;
+}
+input.error-border ~ .floating-label{
+    left: 10px;
+    top: 29px;
+}
+input.error-border:focus ~ .floating-label{
+    color:red;
+    top: 18px;
+    left: 10px;
+}
+
+input.error{
+    border-color:red;
+}
+input.error:focus {
+    border: 2px solid red;
+}
+
+input.error ~ .floating-label {
+    left: 10px;
+    top: 29px;
+}
+
+input.error:focus ~ .floating-label {
+    color: red;
+    top: 18px;
+    left: 10px;
+}
+.butoane, .par {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    justify-content: center;
+    margin: 20px 0;
+    border-radius: 30px;
+    border: 1px solid #999;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    transition: opacity 0.3s;
+}
+
+.butoane:hover {
+    opacity: 0.9;
+}
+
+.butoane:active {
+    opacity: 0.75;
+}
+button[disabled] {
+    animation: none !important;
+    pointer-events: none;
+}
+.birthdate{
+    padding-top:15px;
+    text-align:left;
+}
+.birthdate span{
+    font-size:15px;
+    font-weight:700;
+    line-height:20px;
+}
+.birthdate p{
+    margin-top:10px;
+    font-size:14px;
+    opacity:0.5;
+    font-weight:lighter;
+    padding-bottom:10px;
+}
+
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.form-column {
+/*    flex-basis:20%;*/
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+#month {
+    background-color: black;
+    color: white;
+    width: 210px;
+    padding: 28px 8px 8px 8px;
+    margin-right: 13px;
+    font-size: 17px;
+    border: 1px solid rgb(51, 54, 57);
+    border-radius: 4px;
+    cursor: pointer;
+}
+#day {
+    background-color: black;
+    color: white;
+    width: 90px;
+    padding: 28px 8px 8px;
+    margin-right: 13px;
+    font-size: 17px;
+    border: 1px solid rgb(51, 54, 57);
+    border-radius: 4px;
+    cursor: pointer;
+}
+#year {
+    background-color: black;
+    color: white;
+    width: 113px;
+    padding: 28px 8px 8px;
+    font-size: 17px;
+    border: 1px solid rgb(51, 54, 57);
+    border-radius: 4px;
+    cursor:pointer;
+}
+
+.form-column label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: black;
+    padding: 0 4px;
+    font-size: 13px;
+    opacity: 0.5;
+    font-family:Bahnschrift;
+    font-weight: lighter;
+}
+#month:focus {
+    border-color: #1DA1F2;
+    outline: none;
+}
+#month:focus ~label{
+    color: #1DA1F2;
+}
+
+#day:focus {
+    border-color: #1DA1F2;
+    outline: none;
+}
+#day:focus ~label{
+    color: #1DA1F2;
+}
+#year:focus {
+    border-color: #1DA1F2;
+    outline: none;
+}
+#year:focus ~label{
+    color: #1DA1F2;
+}

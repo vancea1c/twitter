@@ -1,0 +1,148 @@
+﻿body {
+    background-color: #262a2f;
+}
+.pass-box {
+    background-color: #000000;
+    color: white;
+    padding: 10px 80px;
+    width: 430px;
+    min-height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-family:Arial;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 10px;
+}
+.header {
+    text-align: left;
+}
+.header h3{
+    margin-top:5px;
+    margin-bottom:30px;
+}
+.header h1{
+        margin-bottom:10px;
+}
+
+.header p {
+    margin-top:0;
+    font-size: 15px;
+    opacity: 0.5;
+    font-weight: lighter;
+    padding-bottom: 10px;
+}
+.parola {
+    position: relative;
+}
+
+.parola input {
+    width: 84%;
+    background: transparent;
+    border: 1px solid rgb(51, 54, 57);
+    outline: 0;
+    padding: 28px 50px 9px 9px;
+    border-radius: 4px;
+    margin: 10px 0;
+    color: white;
+    transition-property: border-color;
+    transition-duration: 0.5s;
+}
+
+.pass-box input:focus {
+    border-color: #1DA1F2;
+}
+
+.pass-box input::placeholder {
+    font-size: 17px;
+}
+
+.buton {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    justify-content: center;
+    margin: 20px 0;
+    border-radius: 30px;
+    border: 1px solid #999;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    transition: opacity 0.3s;
+    margin-top:300px;
+}
+.buton:hover{
+    opacity:0.9;
+}
+.buton:active{
+    opacity:0.75;
+}
+button[disabled] {
+    animation: none !important;
+    pointer-events: none;
+}
+#togglePassword {
+    position: absolute;
+    right: 12px;
+    bottom: 20px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.floating-label {
+    font-size: 17px;
+    position: absolute;
+    left: 12px;
+    top: 37%;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    color: #cccccc;
+    font-family: Arial;
+    opacity: 0.5;
+}
+input:focus ~ .floating-label{
+    top: 25%;
+    right: 85%;
+    font-size: 11px;
+    color: #1DA1F2;
+    opacity: 0.8;
+}
+input:not(:focus):valid ~ .floating-label {
+    top: 25%;
+    right: 85%;
+    font-size: 11px;
+    opacity: 0.5;
+}
+.error-container {
+    text-align: left;
+    color: red;
+    display: none;
+}
+input.error{
+    border-color:red;
+}
+input.error:focus {
+    border: 2px solid red;
+}
+input.error ~ .floating-label {
+    left: 10px;
+    top: 29px;
+}
+
+input.error:focus ~ .floating-label {
+    color: red;
+    top: 18px;
+    left: 10px;
+}
+.mesaj {
+    position: absolute;
+    color: #F4212E;
+    font-size: 13px;
+    opacity: 0.8;
+    left: 2%;
+    padding-top: 2px;
+    width:90%;
+}

@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>One more step</title>
+    <link href="../css/step1.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!--
+    <link href="../css/text.css" rel="stylesheet" />
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/960_12_col.css" rel="stylesheet"/>
+
+    -->
+</head>
+<body>
+    <div class="signup-box">
+        <div class="header">
+            <h3>Step 1 of 2</h3>
+            <h1>Create your account</h1>
+        </div>
+        <form action="step2.html" method="get" id="myform">
+            <div class="spatius">
+                <input type="text" maxlength="50" id="username" autofocus required
+                       oninput="displayMaxLength(this)" />
+                <label class="floating-label">Name</label>
+                <span id="maxLengthDisplay"></span>
+                <div id="errorContainer" class="desigur">
+                    <span id="mynameis" class="mesaj"></span>
+                </div>
+            </div>
+
+            <div class="spatius">
+                <input type="text" id="email" autofocus required
+                       onkeyup="validateEmailWithDelay(this.value)"/>
+                <label class="floating-label">Email</label>
+                <div id="errorContainer2" class="desigur">
+                    <span id="eroare2" class="mesaj">Please enter a valid email.</span>
+                </div>
+            </div>
+            <div class="birthdate">
+                <span>Date of birth</span>
+                <p>This will not be shown publicly. Confirm your own age, even if this account is for a business, a pet, or something else.</p>
+            </div>
+            <div class="form">
+
+            <div class="form-column">
+                <select id="month" name="month" autofocus required>
+                    <option value=""></option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <label for="month">Month</label>
+            </div>
+
+            <div class="form-column">
+                <select id="day" name="day" autofocus required>
+                    <option value=""></option>
+                    <!-- Options for days will be dynamically populated -->
+                </select>
+                <label for="day">Day</label>
+            </div>
+
+            <div class="form-column">
+                <select id="year" name="year" autofocus required>
+                    <option value=""></option>
+                    <!-- Options for years will be dynamically populated -->
+                </select>
+                <label for="year">Year</label>
+            </div>
+            </div>
+            <button class="butoane" id="lb" disabled="disabled" onclick="submitValue()">Next</button>
+        </form>
+
+    </div>
+    <script>
+        function displayMaxLength(input) {
+            var maxLength = input.getAttribute("maxlength");
+            var currentLength = input.value.length;
+            var displayElement = document.getElementById("maxLengthDisplay");
+            displayElement.textContent = currentLength + " / " + maxLength;
+
+            var errorContainer = document.getElementById("errorContainer");
+            var errorMessage = document.getElementById("mynameis");
+            if (currentLength === 0) {
+                input.classList.add("error-border");
+                errorMessage.textContent = "What's your name?";
+                errorContainer.style.display = "block"; // Show the error container
+            }else {
+                input.classList.remove("error-border");
+                errorMessage.textContent = "";
+                errorContainer.style.display = "none"; // Hide the error container
+            }
+                // Hide the error container on page load (merge si fara asta)
+            //window.addEventListener("DOMContentLoaded", function () {
+            //    var errorContainer = document.getElementById("errorContainer");
+            //    errorContainer.style.display = "none";
+            //});
+        }
+        let delayTimer;
+        var errorContainer = document.getElementById("errorContainer2");
+        var errorMessage = document.getElementById("eroare2");
+
+        function validateEmailWithDelay(email) {
+            clearTimeout(delayTimer);
+
+            // Check if the email input is empty or consists of only whitespace characters
+            if (typeof email === 'string' && email.trim() === '') {
+                document.getElementById('email').classList.remove('error');
+                errorMessage.textContent = "";
+                errorContainer.style.display = "none";// Hide the error container
+                return;
+            }
+
+            delayTimer = setTimeout(function () {
+                validateEmail(email);
+            }, 300);
+        }
+        function validateEmail(email) {
+            const emailInput = document.getElementById('email');
+
+            // Regular expression for email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailPattern.test(email)) {
+                    emailInput.classList.add('error');
+                    errorMessage.textContent = "Please enter a valid email.";
+                    errorContainer.style.display = "block"; // Show the error container
+                } else {
+                    emailInput.classList.remove('error');
+                    errorMessage.textContent = "";
+                    errorContainer.style.display = "none";// Hide the error container
+                }
+        }
+        // Populate day dropdown based on selected month and year
+        function populateDays() {
+            var dayDropdown = document.getElementById("day");
+            var monthDropdown = document.getElementById("month");
+            var yearDropdown = document.getElementById("year");
+            var selectedMonth = monthDropdown.value;
+            var selectedYear = yearDropdown.value;
+            var daysInMonth = new Date(selectedYear, selectedMonth, 0).getDate();
+
+            // Clear existing options
+            dayDropdown.innerHTML = "<option value=''>--</option>";
+
+            // Add options for days
+            for (var i = 1; i <= daysInMonth; i++) {
+                var option = document.createElement("option");
+                option.value = i;
+                option.text = i;
+                dayDropdown.appendChild(option);
+            }
+        }
+
+        // Populate year dropdown with a range of years
+        function populateYears() {
+            var yearDropdown = document.getElementById("year");
+            var currentYear = new Date().getFullYear();
+            var startYear = currentYear - 100; // Assuming a minimum age of 100
+
+            // Clear existing options
+            yearDropdown.innerHTML = "<option value=''>----</option>";
+
+            // Add options for years
+            for (var i = currentYear; i >= startYear; i--) {
+                var option = document.createElement("option");
+                option.value = i;
+                option.text = i;
+                yearDropdown.appendChild(option);
+            }
+        }
+
+        // Submit the form
+        function submitForm() {
+            var month = document.getElementById("month").value;
+            var day = document.getElementById("day").value;
+            var year = document.getElementById("year").value;
+
+            // Perform any necessary validation or processing here
+            // For example, you can validate that a valid date is selected
+
+            // Submit the form data or perform any other actions
+            // Here, we are simply logging the selected birth date
+            console.log("Selected birth date: " + month + "/" + day + "/" + year);
+        }
+
+        // Populate the year dropdown on page load
+        window.onload = function () {
+            populateYears();
+        };
+
+        // Add event listeners to month and year dropdowns
+        document.getElementById("month").addEventListener("change", populateDays);
+        document.getElementById("year").addEventListener("change", populateDays);
+
+        // Get form and button elements
+        const form = document.getElementById('myform');
+        const submitButton = document.getElementById('lb');
+        const emailField = document.getElementById('email');
+
+        // Add event listener to the form's input fields
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        form.addEventListener('input', function () {
+            // Check if all fields have values
+            const email = emailField.value.trim();
+            const name = document.getElementById('username').value.trim();
+            const birthMonth = document.getElementById('month').value;
+            const birthDay = document.getElementById('day').value;
+            const birthYear = document.getElementById('year').value;
+
+            const isEmailValid = emailRegex.test(email);
+
+            const allFieldsHaveValues = email !== '' && isEmailValid && name !== '' && birthMonth !== '' && birthDay !== '' && birthYear !== '';
+
+            // Enable or disable the button based on the check result
+            submitButton.disabled = !allFieldsHaveValues;
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+﻿body {
+    background-color: #262a2f;
+}
+.pass-box {
+    background-color: #000000;
+    color: white;
+    padding: 10px 80px;
+    width: 430px;
+    min-height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 10px;
+}
+.logo {
+    width: 40px;
+    margin-bottom: 20px;
+}
+#sit {
+    font-family: Arial;
+    font-size: 30px;
+    margin-top: 0;
+}
+.parola{
+    position:relative;
+
+}
+.parola input {
+    width: 84%;
+    background: transparent;
+    border: 1px solid rgb(51, 54, 57);
+    outline: 0;
+    padding: 28px 50px 9px 9px;
+    border-radius: 4px;
+    margin: 10px 0;
+    color: white;
+    transition-property: border-color;
+    transition-duration: 0.5s;
+}
+.pass-box input:focus {
+    border-color: #1DA1F2;
+}
+
+.pass-box input::placeholder {
+    font-size: 17px;
+}
+
+.buton{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    justify-content: center;
+    margin: 20px 0;
+    border-radius: 30px;
+    border: 1px solid #999;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    transition: opacity 0.3s;
+}
+button[disabled] {
+    animation: none !important;
+    pointer-events: none;
+    opacity: 0.5; /* Optional: You can reduce the opacity to indicate the button is disabled */
+}
+
+.username {
+    background-color: #222020;
+    width: 100%;
+    border-radius: 4px;
+}
+#placeholder{
+    margin:0;
+    padding:9px;
+}
+#value-output{
+    font-size:18px;
+    margin-top:0;
+    padding: 0 0 5px 9px;
+}
+.buton:hover{
+    opacity:0.9;
+}
+.buton:active{
+    opacity:0.75;
+}
+.pass-box p {
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+    margin: 20px 0 20px;
+    font-family: Arial;
+}
+.pass-box p a{
+    text-decoration: none;
+    color: #259cf0;
+    transition: text-decoration 0.3s;
+}
+.pass-box p a:hover {
+    text-decoration: underline;
+}
+
+#togglePassword {
+    position:absolute;
+    right:12px;
+    bottom:20px;
+    cursor: pointer;
+    font-size:22px;
+}
+.floating-label {
+    font-size: 17px;
+    position: absolute;
+    left: 12px;
+    top: 37%;
+    pointer-events: none;
+    transition: all 0.1s ease;
+    color: #cccccc;
+    font-family: Arial;
+    opacity: 0.5;
+}
+input:focus ~ .floating-label{
+    top: 25%;
+    right: 85%;
+    font-size: 11px;
+    color: #1DA1F2;
+    opacity: 0.8;
+}
+input:not(:focus):valid ~ .floating-label {
+    top: 25%;
+    right: 85%;
+    font-size: 11px;
+    opacity: 0.5;
+}

@@ -1,0 +1,121 @@
+﻿.tweet2 {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.5);
+    position: fixed;
+    left:0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.post2 {
+    position: fixed;
+    top: 5%;
+    display: flex;
+    flex-direction: column;
+    width:31%;
+    border-radius: 30px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.9);
+    background-color: #131418;
+}
+
+.post2 .tweeter {
+    position: relative;
+    display: flex;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.post2 .tweeter img {
+    width: 40px;
+    border-radius: 50px;
+    vertical-align: bottom;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.post2 .tweeter img:hover {
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.post2 .tweeter img:active {
+    box-shadow: 0 0 5px rgba(0,0,0,0.9);
+}
+
+.post2 .tweeter textarea {
+    font-size: 17px;
+    border: none;
+    resize: vertical;
+    width: 60%;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #131418;
+    color: rgba(256, 256, 256, 0.7);
+}
+
+.post2 .tweeter textarea::placeholder {
+    color: rgba(256, 256, 256, 0.7);
+}
+
+.post2 .tweeter textarea:focus {
+    outline: none;
+}
+
+.post2 .tweeter button {
+    position: absolute;
+    left: 85%;
+    font-size: 13px;
+    border-radius: 50px;
+    padding: 6px 12px 6px 12px;
+    font-weight: bold;
+    background-color: rgb(29 155 240);
+    color: whitesmoke;
+    border-style: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.post2 .tweeter button:hover {
+    opacity: 0.8;
+}
+
+.post2 .tweeter button:active {
+    opacity: 0.6;
+}
+
+.hide {
+    display: none;
+}
+#mediaInput2{
+    display:none;
+}
+#fileLabel2{
+    position:absolute;
+    left:75%;
+}
+#fileLabel2:hover {
+    opacity: 0.8;
+}
+
+#fileLabel2:active {
+    opacity: 0.6;
+}
+#mediaPreviewContainer2 {
+    position: relative;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+#mediaPreviewContainer2 img {
+    width: 200px;
+    object-fit: scale-down;
+    margin-bottom:15px;
+}
+#mediafile2 {
+    width: 80%;
+    object-fit: scale-down;
+}

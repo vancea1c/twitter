@@ -1,0 +1,212 @@
+﻿#messageContainer {
+    position:relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display:flex;
+    font-family:Arial;
+    color:whitesmoke;
+    flex-direction:column;
+}
+.content-div{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    margin:9px;
+}
+.top-div {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.top-div #username{
+    margin-left:7px;
+    opacity:0.9;
+    margin-right:5px;
+}
+.top-div #punct{
+    margin-right:5px;
+    opacity:0.5;
+    margin-bottom:6px;
+}
+.top-div #timp{
+    opacity:0.5;
+    font-size:13px;
+}
+.mid-div{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    margin-left:50px;
+}
+.mid-div #mesaj{
+    opacity:0.8;
+    font-size:15px;
+    margin-bottom:10px;
+}
+.mid-div #mediafile{
+    border-radius:5%;
+    width:90%;
+    object-fit:contain;
+}
+.bot-div {
+    margin-top:5px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+}
+.bot-div .likes{
+    margin-left:70px;
+    display:flex;
+    flex-direction:row-reverse;
+    margin-right:250px;
+}
+.bot-div #delete-butoon{
+    font-size: 10px;
+    border-radius: 50px;
+    padding:6px 12px 6px 12px;
+    font-weight: bold;
+    background-color: rgb(29 155 240);
+    color: whitesmoke;
+    border-style: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+.bot-div #delete-butoon:hover {
+    opacity:0.8;
+}
+.bot-div #delete-butoon:active {
+    opacity:0.5;
+}
+.message-div {
+    background-color: #131418;
+    border-radius: 2%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.9);
+    margin-bottom:15px;
+}
+#prof-pic {
+    width: 40px;
+    height:40px;
+    border-radius: 50px;
+    vertical-align: bottom;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+#prof-pic:hover{
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+#prof-pic:active{
+    box-shadow: 0 0 5px rgba(0,0,0,0.9);
+}
+
+.like-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #657786;
+    transition: color 0.3s ease;
+}
+
+    .like-button:hover {
+        color: #E0245E;
+    }
+
+    .like-button.liked {
+        color: #E0245E;
+    }
+
+    .like-button svg {
+        width: 15px;
+        height: 15px;
+        fill: currentColor;
+        margin-right: 5px;
+    }
+
+.likes-count {
+    font-size: 12px;
+    color: #657786;
+    transition: color 0.3s ease;
+}
+
+.like-button.liked .likes-count {
+    color: #E0245E;
+    animation: pulse 0.8s;
+}
+
+/* Animation */
+.like-button.liked svg path {
+    animation: heartBeat 0.8s;
+    transform-origin: center;
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.3);
+    }
+
+    75% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+#mediaInput{
+    display:none;
+}
+#fileLabel{
+    position:absolute;
+    left:75%;
+}
+#fileLabel:hover {
+    opacity: 0.8;
+}
+
+#fileLabel:active {
+    opacity: 0.6;
+}
+#mediaPreviewContainer {
+    position: relative;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+#mediaPreviewContainer img {
+    width: 200px;
+    object-fit: scale-down;
+    margin-bottom:15px;
+}
+#mediafile {
+    width: 80%;
+    object-fit: scale-down;
+}
+.message-container {
+    display: flex;
+    flex-direction: column-reverse; /* Reverse the display order */
+}

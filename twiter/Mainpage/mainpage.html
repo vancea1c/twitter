@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Twitter</title>
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/stylemid.css" rel="stylesheet" />    
+    <link href="css/tweetap.css" rel="stylesheet" />
+    <link href="css/styleleft.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,200" />
+    
+    <!--
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100" rel="stylesheet" />
+    <link href="../css/text.css" rel="stylesheet" />
+    <link href="../css/reset.css" rel="stylesheet" />
+    <link href="../css/960_12_col.css" rel="stylesheet"/>
+
+    -->
+</head>
+<body>
+    <div class="all">
+        <div class="left_side">
+            <div class="top">
+                <img src="../images/twitter.jpg " class="logo" />
+            </div>
+            <div class="side_bar">
+                <div class="options" id="home">
+                    <span class="material-symbols-outlined">
+                        house
+                    </span>
+                    <h2>Home</h2>
+                </div>
+
+                <div class="options" id="exp">
+                    <span class="material-symbols-outlined">
+                        tag
+                    </span>
+                    <h2>Explore</h2>
+                </div>
+
+                <div class="options" id="noti">
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+                    <h2>Notifications</h2>
+                </div>
+
+                <div class="options" id="mail">
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>
+                    <h2>Messages</h2>
+                </div>
+
+                <div class="options" id="list">
+                    <span class="material-symbols-outlined">
+                        list_alt
+                    </span>
+                    <h2>Lists</h2>
+                </div>
+
+                <div class="options" id="book">
+                    <span class="material-symbols-outlined">
+                        bookmark
+                    </span>
+                    <h2>Bookmarks</h2>
+                </div>
+
+                <div class="options" id="pers">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+                    <h2>Profile</h2>
+                </div>
+
+                <div class="options" id="more">
+                    <span class="material-symbols-outlined">
+                        more_horiz
+                    </span>
+                    <h2>More</h2>
+                </div>
+                <button class="flwbut" onclick="openDialog()">Tweet</button>
+
+
+
+            </div>
+        </div>
+        <div class="middle_side">
+            <div class="top">
+                <span id="home">Home</span>
+            </div>
+            <div class="feed">
+                <div class="post">
+                    <div class="tweeter" id="tweeter">
+                        <img src="../images/ricky.jpg" alt="Alternate Text" />
+                        <textarea id="xd" oninput="adjustTextareaHeight()" rows="1" placeholder="Ce este de se petrece?"></textarea>
+                        <label for="mediaInput" id="fileLabel">
+                            <img src="../images/haehe.png" alt="Alternate Text" />
+                        </label>
+                        <input type="file" id="mediaInput">
+                        <button id="button" disabled>Tweet</button>
+                    </div>
+                    <div id="mediaPreviewContainer">
+
+                    </div>
+                </div>
+
+                <div id="messageContainer">
+
+                </div>
+            </div>
+        </div>
+        <div class="right_side">
+            <div class="top">
+                <span id="people">People u may know</span>
+            </div>
+            <div class="people" id="scroll-area">
+                <div class="row" id="1">
+                    <div class="profile-picture">
+                        <img src="../images/mustang.jpg" alt="Alternate Text" />
+                    </div>
+
+                    <div class="stats">
+                        <span class="name">Alan</span>
+                        <span class="Location">Detroit</span>
+                    </div>
+                    <div>
+                        <button class="flwbut" onclick="hideDiv('1')">Follow</button>
+                    </div>
+
+                </div>
+
+                <div class="row" id="2">
+                    <div class="profile-picture">
+                        <img src="../images/12.jpg" alt="Alternate Text" />
+                    </div>
+
+                    <div class="stats">
+                        <span class="name">Sarah</span>
+                        <span class="Location">Cincinnati</span>
+                    </div>
+                    <div>
+                        <button class="flwbut" onclick="hideDiv('2')">Follow</button>
+                    </div>
+                </div>
+
+                <div class="row" id="3">
+                    <div class="profile-picture">
+                        <img src="../images/14.jpg" alt="Alternate Text" />
+                    </div>
+
+                    <div class="stats">
+                        <span class="name">Michaela</span>
+                        <span class="Location">Sandwich</span>
+                    </div>
+                    <div>
+                        <button class="flwbut" onclick="hideDiv('3')">Follow</button>
+                    </div>
+                </div>
+
+                <div class="row" id="4">
+                    <div class="profile-picture">
+                        <img src="../images/13.jpg" alt="Alternate Text" />
+                    </div>
+
+                    <div class="stats">
+                        <span class="name">Emily</span>
+                        <span class="Location">Melbourne</span>
+                    </div>
+                    <div>
+                        <button class="flwbut" onclick="hideDiv('4')">Follow</button>
+                    </div>
+                </div>
+
+                <div class="row" id="5">
+                    <div class="profile-picture">
+                        <img src="../images/15.jpg" alt="Alternate Text" />
+
+                    </div>
+                    <div class="stats">
+                        <span class="name">Isabella</span>
+                        <span class="Location">San Diego</span>
+                    </div>
+                    <div>
+                        <button class="flwbut" onclick="hideDiv('5')">Follow</button>
+                    </div>
+                </div>
+
+                <div class="row" id="6">
+                    <div class="profile-picture">
+                        <img src="../images/21.jpg" alt="Alternate Text" />
+
+                    </div>
+                    <div class="stats">
+                        <span class="name">Jakob</span>
+                        <span class="Location">Albuquerque</span>
+                    </div>
+                    <div>
+                        <button class="flwbut" onclick="hideDiv('6')">Follow</button>
+                    </div>
+                </div>
+
+                <div class="row" id="7">
+                    <div class="profile-picture">
+                        <img src="../images/16.jpg" alt="Alternate Text" />
+
+                    </div>
+                    <div class="stats">
+                        <span class="name">Calvin</span>
+                        <span class="Location">Detroit</span>
+                    </div>
+                    <div>
+                        <button class="flwbut" onclick="hideDiv('7')">Follow</button>
+                    </div>
+                </div>
+
+                <div class="row" id="8">
+                    <div class="profile-picture">
+                        <img src="../images/17.jpg" alt="Alternate Text" />
+
+                    </div>
+                    <div class="stats">
+                        <span class="name">Karla</span>
+                        <span class="Location">Cincinnati</span>
+                    </div>
+                    <div>
+                        <button class="flwbut" onclick="hideDiv('8')">Follow</button>
+                    </div>
+                </div>
+
+                <div class="row" id="9">
+                    <div class="profile-picture">
+                        <img src="../images/18.jpg" alt="Alternate Text" />
+
+                    </div>
+                    <div class="stats">
+                        <span class="name">Tony</span>
+                        <span class="Location">Georgetown</span>
+                    </div>
+                    <div>
+                        <button class="flwbut" onclick="hideDiv('9')">Follow</button>
+                    </div>
+                </div>
+
+                <div class="row" id="10">
+                    <div class="profile-picture">
+                        <img src="../images/22.jpg" alt="Alternate Text" />
+
+                    </div>
+                    <div class="stats">
+                        <span class="name">Sebastian</span>
+                        <span class="Location">East Liverpool</span>
+                    </div>
+                    <div>
+                        <button class="flwbut" onclick="hideDiv('10')">Follow</button>
+                    </div>
+                </div>
+
+                <div class="row" id="11">
+                    <div class="profile-picture">
+                        <img src="../images/20.jpg" alt="Alternate Text" />
+
+                    </div>
+                    <div class="stats">
+                        <span class="name">Raymond</span>
+                        <span class="Location">New Orleans</span>
+                    </div>
+                    <div>
+                        <button class="flwbut" onclick="hideDiv('11')">Follow</button>
+                    </div>
+                </div>
+                <p id="message" style="display: none;">Come back later, new people might join.</p>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="tweet2 hide">
+        <div class="post2">
+            <div class="tweeter" id="tweeter2">
+                <img src="../images/ricky.jpg" alt="Alternate Text" />
+                <textarea id="xd2" oninput="adjustTextareaHeight()" rows="1" placeholder="Ce este de se petrece?"></textarea>
+                <label for="mediaInput2" id="fileLabel2">
+                    <img src="../images/haehe.png" alt="Alternate Text" />
+                </label>
+                <input type="file" id="mediaInput2">
+                <button id="button2" disabled onclick="closeDialog()">Tweet</button>
+            </div>
+            <div id="mediaPreviewContainer2">
+
+            </div>
+        </div>
+    </div>
+    <script src="main2.js"></script>
+    <script src="main.js"></script>
+
+
+</body>
+</html>
